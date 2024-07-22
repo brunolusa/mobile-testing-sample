@@ -24,7 +24,6 @@ namespace mobile_testing_sample
 
             driverOptions.AddAdditionalAppiumOption("appPackage", "com.android.settings");
             driverOptions.AddAdditionalAppiumOption("appActivity", ".Settings");
-            // NoReset assumes the app com.google.android is preinstalled on the emulator
             driverOptions.AddAdditionalAppiumOption("noReset", true);
 
             driver = new AndroidDriver(serverUri, driverOptions, TimeSpan.FromSeconds(180));
@@ -42,7 +41,14 @@ namespace mobile_testing_sample
         {
 
             driver.ToggleWifi();
-           
+
+        }
+
+        [Test]
+        public void SetUpInstallApp()
+        {
+            driver.InstallApp("C:/Users/Lusa/Desktop/mobile-testing-sample/mobile-testing-sample/casasbahia_250000200.apk");
+            
         }
     }
 }
