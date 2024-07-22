@@ -4,6 +4,7 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace mobile_testing_sample
 {
@@ -49,6 +50,14 @@ namespace mobile_testing_sample
         {
             driver.InstallApp("C:/Users/Lusa/Desktop/mobile-testing-sample/mobile-testing-sample/casasbahia_250000200.apk");
             
+        }
+
+        [Test]
+        public void ADBIntegration()
+        {
+
+            driver.ExecuteScript("mobile: shell", "{command: rm, args: [-rf, /mnt/sdcard/Pic/*.*]}").ToString();
+
         }
     }
 }
